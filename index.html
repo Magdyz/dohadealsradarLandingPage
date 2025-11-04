@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doha Deals Radar - Find the Best Deals in Doha</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font (Inter) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom Tailwind Configuration -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+            colors: {
+              "brand-maroon": {
+                50: "#fdf2f2",
+                100: "#fbe7e7",
+                200: "#f8d4d4",
+                300: "#f3b5b5",
+                400: "#e98b8b",
+                500: "#da6464",
+                600: "#c24141",
+                700: "#a33333", // A slightly more accessible maroon
+                800: "#8a2c2c",
+                900: "#8A1538", // Qatar Maroon
+                950: "#4a0f1d",
+              },
+              "brand-gold": {
+                500: "#D4AF37", // A soft gold
+              },
+              "brand-sand": "#FFFBF5", // A very light sand background
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Small CSS tweaks for finesse */
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+  </head>
+  <body class="bg-brand-sand text-gray-900 font-sans">
+    <!-- Header -->
+    <header class="absolute top-0 left-0 w-full z-10 py-6 px-4 md:px-8">
+      <div class="container mx-auto max-w-6xl">
+        <nav class="flex justify-between items-center">
+          <!-- Logo -->
+          <div class="flex items-center gap-2">
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 100 100"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="50" cy="50" r="50" fill="#8A1538" />
+              <path
+                d="M50 30C50 30 70 30 70 50C70 70 50 70 50 70"
+                stroke="#FFFBF5"
+                stroke-width="8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M50 38C50 38 62 38 62 50C62 62 50 62 50 62"
+                stroke="#FFFBF5"
+                stroke-width="8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <circle cx="50" cy="50" r="4" fill="#FFFBF5" />
+              <path d="M30 42L30 58L42 50L30 42Z" fill="#FFFBF5" />
+              <path
+                d="M38 50L46 50M42 46L42 54"
+                stroke="#D4AF37"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+            </svg>
+            <span class="font-bold text-xl text-brand-maroon-900"
+              >Doha Deals Radar</span
+            >
+          </div>
+          <!-- CTA Button -->
+          <a
+            href="https://play.google.com/store/apps/details?id=com.yourapp.dohadealsradar"
+            target="_blank"
+            class="hidden md:inline-block bg-brand-maroon-900 text-white font-semibold px-5 py-2 rounded-full shadow-lg hover:bg-brand-maroon-700 transition-colors"
+          >
+            Get App Now
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="relative pt-32 md:pt-40 pb-20 overflow-hidden">
+      <div class="container mx-auto max-w-6xl px-4 md:px-8">
+        <div class="flex flex-col md:flex-row items-center gap-8 md:gap-16">
+          <!-- Text Content -->
+          <div class="md:w-1/2 text-center md:text-left z-10">
+            <h1
+              class="text-5xl md:text-7xl font-black text-brand-maroon-900 tracking-tighter mb-4"
+            >
+              Never Miss a Deal in Doha.
+            </h1>
+            <p class="text-lg md:text-xl text-gray-700 mb-8">
+              Stop searching, start saving.
+              <span class="font-bold text-brand-maroon-800"
+                >Doha Deals Radar</span
+              >
+              is your free guide to hundreds of daily 2-for-1s, flash sales, and
+              discounts across Qatar.
+            </p>
+            <!-- Button Group -->
+            <div
+              class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+            >
+              <a
+                href="https://play.google.com/store/apps/details?id=com.yourapp.dohadealsradar"
+                target="_blank"
+                class="flex items-center justify-center gap-3 bg-gray-900 text-white font-semibold px-6 py-4 rounded-lg shadow-lg hover:bg-gray-700 transition-all transform hover:scale-105"
+              >
+                <svg
+                  class="w-7 h-7"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3 20.4V3.6C3 3.3 3.2 3 3.4 3L13.9 11.7C14.2 11.9 14.2 12.1 13.9 12.3L3.4 21C3.2 21 3 20.7 3 20.4Z"
+                    fill="#00E06C"
+                  />
+                  <path
+                    d="M16.4 14.8L13.9 12.3C14.2 12.1 14.2 11.9 13.9 11.7L16.4 9.2C16.8 8.8 17.5 9 17.5 9.5V14.5C17.5 15 16.8 15.2 16.4 14.8Z"
+                    fill="#00A0DC"
+                  />
+                  <path
+                    d="M3.4 3L13.9 11.7C14.2 11.9 14.2 12.1 13.9 12.3L3.4 21C3.6 21 3.9 20.9 4.1 20.7L15.9 12.3C16.2 12.1 16.2 11.9 15.9 11.7L4.1 3.3C3.9 3.1 3.6 3 3.4 3Z"
+                    fill="#00B3E3"
+                  />
+                  <path
+                    d="M17.5 9.5C17.4 9.4 17.2 9.3 17 9.3C16.8 9.3 16.6 9.4 16.4 9.2L13.9 11.7C14.2 11.9 14.2 12.1 13.9 12.3L16.4 14.8C16.6 14.6 16.8 14.7 17 14.7C17.2 14.7 17.4 14.6 17.5 14.5V9.5Z"
+                    fill="#0079C3"
+                  />
+                  <path
+                    d="M21.6 10.8L18.4 9C18.1 8.9 17.5 9.1 17.5 9.5V14.5C17.5 14.9 18.1 15.1 18.4 15L21.6 13.2C22.1 12.9 22.1 11.1 21.6 10.8Z"
+                    fill="#FFC900"
+                  />
+                </svg>
+                <span>Get it on Google Play</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Phone Mockup -->
+          <div class="md:w-1/2 w-full flex justify-center z-10">
+            <div
+              class="w-full max-w-[300px] h-[600px] bg-gray-800 rounded-[40px] border-[14px] border-gray-800 shadow-2xl relative overflow-hidden"
+            >
+              <!-- Top Notch -->
+              <div
+                class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-gray-800 rounded-b-xl"
+              ></div>
+              <!-- App Screen -->
+              <div class="w-full h-full bg-white overflow-y-auto p-4 pt-8">
+                <!-- App Header -->
+                <div class="flex justify-between items-center mb-4">
+                  <h2 class="font-bold text-xl text-brand-maroon-900">
+                    Deals Near You
+                  </h2>
+                  <svg
+                    class="w-6 h-6 text-gray-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    ></path>
+                  </svg>
+                </div>
+
+                <!-- Fake App Content -->
+                <div class="space-y-3">
+                  <!-- Deal Card 1 -->
+                  <div class="bg-brand-sand rounded-lg p-3 shadow-sm">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-12 h-12 bg-brand-maroon-100 rounded-lg flex items-center justify-center font-bold text-brand-maroon-800"
+                      >
+                        50%
+                      </div>
+                      <div>
+                        <h3 class="font-bold">Villaggio Mall</h3>
+                        <p class="text-sm text-gray-600">
+                          Flash Sale at Sparky's
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Deal Card 2 -->
+                  <div class="bg-brand-sand rounded-lg p-3 shadow-sm">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-12 h-12 bg-brand-maroon-100 rounded-lg flex items-center justify-center font-bold text-brand-maroon-800"
+                      >
+                        2-1
+                      </div>
+                      <div>
+                        <h3 class="font-bold">The Pearl-Qatar</h3>
+                        <p class="text-sm text-gray-600">
+                          Coffee at Medina Centrale
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Deal Card 3 -->
+                  <div class="bg-brand-sand rounded-lg p-3 shadow-sm">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-12 h-12 bg-brand-maroon-100 rounded-lg flex items-center justify-center font-bold text-brand-maroon-800"
+                      >
+                        30%
+                      </div>
+                      <div>
+                        <h3 class="font-bold">Souq Waqif</h3>
+                        <p class="text-sm text-gray-600">
+                          Spices & Oud Discounts
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Deal Card 4 -->
+                  <div class="bg-brand-sand rounded-lg p-3 shadow-sm">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-12 h-12 bg-brand-maroon-100 rounded-lg flex items-center justify-center font-bold text-brand-maroon-800"
+                      >
+                        FREE
+                      </div>
+                      <div>
+                        <h3 class="font-bold">MIA Park</h3>
+                        <p class="text-sm text-gray-600">
+                          Karak with any purchase
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Background Doha Skyline Graphic -->
+      <!-- This is a custom, stylized SVG of the Doha West Bay skyline -->
+      <div
+        class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[1600px] h-auto z-0 opacity-10 text-gray-900"
+        aria-hidden="true"
+      >
+        <svg
+          viewBox="0 0 1440 297"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 297V243.5L52 248.5L100.5 243.5L120 255L144 243.5L181.5 255L220 248.5L257 260.5L285 255L313 248.5L343.5 260.5L375 255L405.5 248.5L434.5 243.5L463 255L487.5 248.5L517 260.5L547.5 248.5L575 255L604 248.5L626.5 260.5L653 243.5L680 255L707 248.5L736 243.5L765.5 255L794.5 248.5L820 260.5L848.5 248.5L875.5 255L903.5 248.5L930 260.5L957 243.5L984 255L1011 248.5L1039.5 243.5L1069 255L1098 248.5L1124 260.5L1152.5 248.5L1179.5 255L1207.5 248.5L1234 260.5L1261 243.5L1288 255L1315 248.5L1343.5 243.5L1373 255L1402 248.5L1440 260.5V297H0Z"
+            fill="currentColor"
+            fill-opacity="0.3"
+          />
+          <path
+            d="M575 255H562V115L566 111L570.5 115V255H575Z"
+            fill="currentColor"
+          />
+          <path
+            d="M604 248.5H590V97L594 93L599.5 97V248.5H604Z"
+            fill="currentColor"
+          />
+          <path
+            d="M626.5 260.5H617V81L621.5 77L626.5 81V260.5Z"
+            fill="currentColor"
+          />
+          <path
+            d="M653 243.5H642V105L647.5 99.5L653 105V243.5Z"
+            fill="currentColor"
+          />
+          <path
+            d="M680 255H668V38L671 35L677 38V255H680Z"
+            fill="currentColor"
+          />
+          <path
+            d="M707 248.5H695V0L698 0L704 0V248.5H707Z"
+            fill="currentColor"
+          />
+          <path
+            d="M736 243.5H724V38L727 35L733 38V243.5H736Z"
+            fill="currentColor"
+          />
+          <path
+            d="M765.5 255H753V105L758.5 99.5L764 105V255H765.5Z"
+            fill="currentColor"
+          />
+          <path
+            d="M794.5 248.5H783V81L787.5 77L793 81V248.5H794.5Z"
+            fill="currentColor"
+          />
+          <path
+            d="M820 260.5H808V97L812 93L817.5 97V260.5H820Z"
+            fill="currentColor"
+          />
+          <path
+            d="M848.5 248.5H836V115L840 111L845.5 115V248.5H848.5Z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+    </main>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto max-w-6xl px-4 md:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+            All Your Deals in One Place
+          </h2>
+          <p class="text-lg text-gray-600 mt-2">
+            Doha Deals Radar is built to make saving money effortless.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Feature 1 -->
+          <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
+            <div
+              class="w-12 h-12 bg-brand-maroon-100 text-brand-maroon-800 rounded-full flex items-center justify-center"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mt-4 mb-2">Hyper-Local Offers</h3>
+            <p class="text-gray-600">
+              Find offers in real-time, right where you are. From West Bay to Al
+              Wakrah, we've got you covered.
+            </p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
+            <div
+              class="w-12 h-12 bg-brand-maroon-100 text-brand-maroon-800 rounded-full flex items-center justify-center"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M7 7h.01M7 11h.01M7 15h.01M10 7h.01M10 11h.01M10 15h.01M13 7h.01M13 11h.01M13 15h.01M16 7h.01M16 11h.01M16 15h.01"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mt-4 mb-2">All Categories</h3>
+            <p class="text-gray-600">
+              Browse discounts by category: restaurants, electronics, fashion,
+              groceries, events, and more.
+            </p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
+            <div
+              class="w-12 h-12 bg-brand-maroon-100 text-brand-maroon-800 rounded-full flex items-center justify-center"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341A6.002 6.002 0 006 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mt-4 mb-2">Instant Deal Alerts</h3>
+            <p class="text-gray-600">
+              Never miss a flash sale! Get notified when your favorite stores
+              and brands have a new offer.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QR Code / Final CTA Section -->
+    <section class="py-20 bg-brand-maroon-900 text-white">
+      <div class="container mx-auto max-w-4xl px-4 md:px-8">
+        <div
+          class="flex flex-col md:flex-row items-center justify-center text-center md:text-left gap-8"
+        >
+          <!-- QR Code Graphic -->
+          <div class="bg-white p-4 rounded-xl shadow-2xl flex-shrink-0">
+            <!-- Placeholder QR Code: Replace the data= URL with your real Google Play link -->
+            <img
+              src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://play.google.com/store/apps/details?id=com.yourapp.dohadealsradar"
+              alt="QR Code for Doha Deals Radar App"
+              class="rounded-lg"
+            />
+          </div>
+
+          <!-- Text Content -->
+          <div>
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-3">
+              Download the App Now!
+            </h2>
+            <p class="text-lg text-brand-maroon-100 mb-6">
+              Scan the QR code with your phone's camera to download the app
+              instantly and start discovering the best deals in Doha.
+            </p>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.yourapp.dohadealsradar"
+              target="_blank"
+              class="inline-block bg-white text-brand-maroon-900 font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-gray-200 transition-colors transform hover:scale-105"
+            >
+              Go to Google Play Store
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-brand-sand">
+      <div
+        class="container mx-auto max-w-6xl px-4 md:px-8 text-center text-gray-500"
+      >
+        <p>&copy; 2025 Doha Deals Radar. All rights reserved.</p>
+        <p class="mt-2">Made with ❤️ for the people of Doha 🇶🇦</p>
+      </div>
+    </footer>
+  </body>
+</html>
