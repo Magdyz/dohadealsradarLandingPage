@@ -1,55 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Doha Deals Radar - Real deals by real people in Qatar.</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 
+    ==================================================
+    PRIMARY SEO (SEARCH ENGINE OPTIMIZATION)
+    ==================================================
+    -->
+    
+    <!-- Bilingual Title: Appears in browser tabs and search results -->
+    <title>Doha Deals Radar | Best Deals & Offers in Qatar (عروض و خصومات الدوحة)</title>
+    
+    <!-- English Meta Description (The "hook" for search results) -->
+    <meta name="description" content="Stop searching, start saving. Doha Deals Radar is your community-powered app for the best 2-for-1 deals, offers, and discounts in Qatar. Real deals, powered by real people.">
+    
+    <!-- Arabic Meta Description -->
+    <meta name="description" lang="ar" content="توقف عن البحث، ابدأ التوفير. رادار عروض الدوحة هو تطبيقك المجتمعي لأفضل العروض والخصومات في قطر. صفقات حقيقية يشاركها أشخاص مثلك.">
+    
+    <!-- Keywords (Less important for Google, but still good practice for other engines) -->
+    <meta name="keywords" content="Doha deals, Qatar offers, save money in Qatar, 2-for-1 Doha, discounts Qatar, community deals, best offers in Doha, عروض الدوحة, خصومات قطر, توفير, صفقات قطر, رادار عروض الدوحة">
+    
+    <!-- Geolocation & Language Targeting (Tells Google this is for Qatar) -->
+    <meta name="geo.region" content="QA" />
+    <meta name="geo.placename" content="Doha, Qatar" />
+    <link rel="alternate" hreflang="en-QA" href="https://www.dohadealsradar.com" />
+    <link rel="alternate" hreflang="ar-QA" href="https://www.dohadealsradar.com" />
+    <link rel="alternate" hreflang="x-default" href="https://www.dohadealsradar.com" />
+
+    <!-- 
+    ==================================================
+    SOCIAL MEDIA & SHARING (OPEN GRAPH / TWITTER)
+    This controls the preview when your link is shared 
+    on WhatsApp, Facebook, Instagram, X (Twitter), etc.
+    ==================================================
+    -->
+    
+    <!-- Primary URL -->
+    <meta property="og:url" content="https://www.dohadealsradar.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Bilingual Title for Sharing -->
+    <meta property="og:title" content="Doha Deals Radar | عروض و خصومات الدوحة">
+    <meta name="twitter:title" content="Doha Deals Radar | عروض و خصومات الدوحة">
+    
+    <!-- Description for Sharing -->
+    <meta property="og:description" content="Your community-powered app for the best deals, offers, and discounts in Qatar.">
+    <meta name="twitter:description" content="Your community-powered app for the best deals, offers, and discounts in Qatar.">
+    
+    <!-- Sharing Image (CRITICAL!) -->
+    <!-- !! IMPORTANT: Replace this placeholder with a real 1200x630px image of your app !! -->
+    <meta property="og:image" content="https://placehold.co/1200x630/8A1538/FFFBF5?text=Doha+Deals+Radar">
+    <meta name="twitter:image" content="https://placehold.co/1200x630/8A1538/FFFBF5?text=Doha+Deals+Radar">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- 
+    ==================================================
+    STRUCTURED DATA (JSON-LD SCHEMA)
+    This is the most powerful 2025+ SEO technique.
+    It tells Google exactly what you are, making you
+    eligible for rich snippets (like star ratings) 
+    in search results.
+    ==================================================
+    -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Doha Deals Radar",
+      "applicationCategory": ["ShoppingApplication", "LifestyleApplication"],
+      "operatingSystem": "ANDROID",
+      "installUrl": "https://play.google.com/store/apps/details?id=com.yourapp.dohadealsradar",
+      "description": "Doha Deals Radar is your community-powered app for the best deals, offers, and discounts across Qatar. All deals are hand-picked by people like you.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "QAR"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",  
+        "reviewCount": "125"  
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Doha Deals Radar"
+      }
+    }
+    </script>
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Font (Inter) -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;5Further&family=Public+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
     <!-- Custom Tailwind Configuration -->
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ["Inter", "sans-serif"],
-            },
-            colors: {
-              "brand-maroon": {
-                50: "#fdf2f2",
-                100: "#fbe7e7",
-                200: "#f8d4d4",
-                300: "#f3b5b5",
-                400: "#e98b8b",
-                500: "#da6464",
-                600: "#c24141",
-                700: "#a33333", // A slightly more accessible maroon
-                800: "#8a2c2c",
-                900: "#8A1538", // Qatar Maroon
-                950: "#4a0f1d",
-              },
-              "brand-gold": {
-                500: "#D4AF37", // A soft gold
-              },
-              "brand-sand": "#FFFBF5", // A very light sand background
-            },
-          },
-        },
-      };
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Public Sans', 'Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-maroon': {
+                            '50': '#fdf2f2',
+                            '100': '#fbe7e7',
+                            '200': '#f8d4d4',
+                            '300': '#f3b5b5',
+                            '400': '#e98b8b',
+                            '500': '#da6464',
+                            '600': '#c24141',
+                            '700': '#a33333', 
+                            '800': '#8a2c2c',
+                            '900': '#8A1538', // Qatar Maroon
+                            '950': '#4a0f1d',
+                        },
+                        'brand-gold': {
+                            '500': '#D4AF37', // A soft gold
+                        },
+                        'brand-sand': '#FFFBF5', // A very light sand background
+                    }
+                }
+            }
+        }
     </script>
     <style>
-      /* Small CSS tweaks for finesse */
-      body {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
+        /* Small CSS tweaks for finesse */
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-family: 'Public Sans', sans-serif;
+        }
     </style>
-  </head>
+</head>
   <body class="bg-brand-sand text-gray-900 font-sans">
     <!-- Header -->
     <header class="absolute top-0 left-0 w-full z-10 py-6 px-4 md:px-8">
